@@ -1,0 +1,241 @@
+<div class="user-management">
+  <div class="header">
+    <h2>User Management</h2>
+    <button mat-raised-button color="primary" (click)="showAddForm = !showAddForm">Add User</button>
+  </div>
+  
+  <div class="filters-section">
+    <div class="filter-row">
+      <div class="filter-group">
+        <label class="field-label">Name</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="nameFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">Email</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="emailFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">Mobile</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="mobileFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">Role</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <mat-select [(ngModel)]="roleFilter">
+            <mat-option value="">All Roles</mat-option>
+            <mat-option value="Admin">Admin</mat-option>
+            <mat-option value="Manager">Manager</mat-option>
+            <mat-option value="User">User</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      <button mat-raised-button color="accent" (click)="clearFilters()" class="clear-btn">Search</button>
+    </div>
+  </div>
+
+  @if (showAddForm) {
+    <div class="modal-overlay" (click)="showAddForm = false">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>Add New User</h3>
+          <button class="close-btn" (click)="showAddForm = false">&times;</button>
+        </div>
+        <form #addUserForm="ngForm">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" [(ngModel)]="newUser.name" [class]="'form-input ' + (nameField.valid && nameField.touched ? 'valid' : nameField.invalid && nameField.touched ? 'invalid' : '')" name="newName" required minlength="2" #nameField="ngModel">
+            <div *ngIf="nameField.invalid && nameField.touched" class="error-message">
+              <small *ngIf="nameField.errors?.['required']">Name is required</small>
+              <small *ngIf="nameField.errors?.['minlength']">Name must be at least 2 characters</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" [(ngModel)]="newUser.email" [class]="'form-input ' + (emailField.valid && emailField.touched ? 'valid' : emailField.invalid && emailField.touched ? 'invalid' : '')" name="newEmail" required email pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" #emailField="ngModel">
+            <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+              <small *ngIf="emailField.errors?.['required']">Email is required</small>
+              <small *ngIf="emailField.errors?.['email'] || emailField.errors?.['pattern']">Please enter a complete email (e.g., user&#64;example.com)</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" [(ngModel)]="newUser.username" [class]="'form-input ' + (usernameField.valid && usernameField.touched ? 'valid' : usernameField.invalid && usernameField.touched ? 'invalid' : '')" name="newUsername" required minlength="3" #usernameField="ngModel">
+            <div *ngIf="usernameField.invalid && usernameField.touched" class="error-message">
+              <small *ngIf="usernameField.errors?.['required']">Username is required</small>
+              <small *ngIf="usernameField.errors?.['minlength']">Username must be at least 3 characters</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Mobile</label>
+            <input type="tel" [(ngModel)]="newUser.mobile" [class]="'form-input ' + (mobileField.valid && mobileField.touched ? 'valid' : mobileField.invalid && mobileField.touched ? 'invalid' : '')" name="newMobile" required pattern="[0-9]{10}" maxlength="10" #mobileField="ngModel">
+            <div *ngIf="mobileField.invalid && mobileField.touched" class="error-message">
+              <small *ngIf="mobileField.errors?.['required']">Mobile is required</small>
+              <small *ngIf="mobileField.errors?.['pattern']">Mobile must be 10 digits</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Role</label>
+            <select [(ngModel)]="newUser.role" [class]="'form-input ' + (roleField.valid && roleField.touched ? 'valid' : roleField.invalid && roleField.touched ? 'invalid' : '')" name="newRole" required #roleField="ngModel">
+              <option value="">Select Role</option>
+              <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+            </select>
+            <div *ngIf="roleField.invalid && roleField.touched" class="error-message">
+              <small *ngIf="roleField.errors?.['required']">Role is required</small>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-primary" [disabled]="!addUserForm.valid" (click)="saveUser()">Save</button>
+            <button type="button" class="btn-secondary" (click)="clearForm()">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  }
+
+  @if (showEditForm) {
+    <div class="modal-overlay" (click)="showEditForm = false">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>Edit User</h3>
+          <button class="close-btn" (click)="showEditForm = false">&times;</button>
+        </div>
+        <form #editUserForm="ngForm">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" [(ngModel)]="selectedUser.name" [class]="'form-input ' + (editNameField.valid && editNameField.touched ? 'valid' : editNameField.invalid && editNameField.touched ? 'invalid' : '')" name="editName" required minlength="2" #editNameField="ngModel">
+            <div *ngIf="editNameField.invalid && editNameField.touched" class="error-message">
+              <small *ngIf="editNameField.errors?.['required']">Name is required</small>
+              <small *ngIf="editNameField.errors?.['minlength']">Name must be at least 2 characters</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" [(ngModel)]="selectedUser.email" [class]="'form-input ' + (editEmailField.valid && editEmailField.touched ? 'valid' : editEmailField.invalid && editEmailField.touched ? 'invalid' : '')" name="editEmail" required email pattern="[a-z0-9._%+-]+&#64;[a-z0-9.-]+\.[a-z]{2,}$" #editEmailField="ngModel">
+            <div *ngIf="editEmailField.invalid && editEmailField.touched" class="error-message">
+              <small *ngIf="editEmailField.errors?.['required']">Email is required</small>
+              <small *ngIf="editEmailField.errors?.['email'] || editEmailField.errors?.['pattern']">Please enter a complete email (e.g., user&#64;example.com)</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" [(ngModel)]="selectedUser.username" [class]="'form-input ' + (editUsernameField.valid && editUsernameField.touched ? 'valid' : editUsernameField.invalid && editUsernameField.touched ? 'invalid' : '')" name="editUsername" required minlength="3" #editUsernameField="ngModel">
+            <div *ngIf="editUsernameField.invalid && editUsernameField.touched" class="error-message">
+              <small *ngIf="editUsernameField.errors?.['required']">Username is required</small>
+              <small *ngIf="editUsernameField.errors?.['minlength']">Username must be at least 3 characters</small>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">Mobile</label>
+            <input type="tel" [(ngModel)]="selectedUser.mobile" [class]="'form-input ' + (editMobileField.valid && editMobileField.touched ? 'valid' : editMobileField.invalid && editMobileField.touched ? 'invalid' : '')" name="editMobile" required pattern="[0-9]{10}" maxlength="10" #editMobileField="ngModel">
+            <div *ngIf="editMobileField.invalid && editMobileField.touched" class="error-message">
+              <small *ngIf="editMobileField.errors?.['required']">Mobile is required</small>
+              <small *ngIf="editMobileField.errors?.['pattern']">Mobile must be 10 digits</small>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <select [(ngModel)]="selectedUser.role" [class]="'form-input ' + (editRoleField.valid && editRoleField.touched ? 'valid' : editRoleField.invalid && editRoleField.touched ? 'invalid' : '')" name="editRole" required #editRoleField="ngModel">
+                <option value="">Select Role</option>
+                <option *ngFor="let role of roles" [value]="role.name">{{ role.name }}</option>
+              </select>
+              <div *ngIf="editRoleField.invalid && editRoleField.touched" class="error-message">
+                <small *ngIf="editRoleField.errors?.['required']">Role is required</small>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Status</label>
+              <select [(ngModel)]="selectedUser.isActive" class="form-input" name="isActive">
+                <option [value]="true">Active</option>
+                <option [value]="false">Inactive</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn-primary" [disabled]="!editUserForm.valid" (click)="updateUser()">Update</button>
+            <button type="button" class="btn-secondary" (click)="showEditForm = false">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  }
+
+  <div class="user-table">
+    <table mat-table [dataSource]="paginatedUsers" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef>Mobile</th>
+        <td mat-cell *matCellDef="let user">{{ user.mobile }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef>Role</th>
+        <td mat-cell *matCellDef="let user">{{ user.role }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let user">
+          <span [style.color]="user.isActive ? 'green' : 'red'">{{ user.isActive ? 'Active' : 'Inactive' }}</span>
+        </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let user">
+          <button mat-icon-button color="primary" (click)="editUser(user)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteUser(user.id!)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <div class="pagination">
+      <div class="page-info">
+        Page {{ currentPage }} of {{ totalPages }} ({{ filteredUsers.length }} total users)
+      </div>
+      <div class="page-controls">
+        <button class="page-btn" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+        @for (page of [].constructor(totalPages); track $index) {
+          <button class="page-btn" [class.active]="currentPage === $index + 1" (click)="goToPage($index + 1)">{{ $index + 1 }}</button>
+        }
+        <button class="page-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+      </div>
+    </div>
+  </div>
+</div>

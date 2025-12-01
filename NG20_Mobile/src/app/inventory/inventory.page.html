@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inex</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-searchbar placeholder="Search items..." (ionInput)="filterItems($event)"></ion-searchbar>
+  
+  <div *ngIf="loading" class="loading-container">
+    <ion-spinner></ion-spinner>
+    <p>Loading items...</p>
+  </div>
+  
+  <ion-list *ngIf="!loading">
+    <ion-item *ngFor="let item of filteredItems" button>
+      <ion-avatar slot="start">
+        <ion-icon name="cube" color="primary"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.name || item.itemName}}</h2>
+        <p>Category: {{item.category || item.categoryName}}</p>
+        <p>Stock: {{item.stock || item.quantity}} units</p>
+      </ion-label>
+      <ion-badge slot="end" [color]="(item.stock || item.quantity) > 10 ? 'success' : 'danger'">
+        {{item.stock || item.quantity}}
+      </ion-badge>
+    </ion-item>
+    
+    <ion-item *ngIf="filteredItems.length === 0">
+      <ion-label>
+        <h2>No items found</h2>
+        <p>Try adjusting your search criteria</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="success" size="small">
+        <ion-icon name="home"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" size="small">
+        <ion-icon name="trending-down"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="warning" size="small">
+        <ion-icon name="trending-up"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <ion-icon name="card"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

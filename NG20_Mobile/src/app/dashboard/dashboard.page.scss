@@ -1,0 +1,166 @@
+.dashboard-container {
+  padding: 1rem;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.welcome-card {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  
+  .welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .welcome-text {
+      h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      
+      p {
+        margin: 0;
+        opacity: 0.9;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .welcome-icon {
+      font-size: 3rem;
+      opacity: 0.3;
+    }
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  
+  ion-spinner {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: var(--ion-color-medium);
+    font-size: 0.9rem;
+  }
+}
+
+.stats-section, .actions-section {
+  margin-bottom: 2rem;
+  
+  h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #495057;
+  }
+}
+
+.stat-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  ion-card-content {
+    padding: 1.25rem;
+    
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      
+      ion-icon {
+        font-size: 1.5rem;
+      }
+      
+      .stat-trend {
+        background: rgba(40, 167, 69, 0.1);
+        color: #28a745;
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    }
+    
+    h2 {
+      margin: 0.5rem 0;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #212529;
+    }
+    
+    p {
+      margin: 0;
+      color: #6c757d;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+  }
+}
+
+.items-card {
+  .stat-header ion-icon {
+    color: #007bff;
+  }
+}
+
+.companies-card {
+  .stat-header ion-icon {
+    color: #28a745;
+  }
+}
+
+.users-card {
+  .stat-header ion-icon {
+    color: #ffc107;
+  }
+}
+
+.categories-card {
+  .stat-header ion-icon {
+    color: #6f42c1;
+  }
+}
+
+.action-card {
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+  
+  ion-card-content {
+    padding: 1.5rem;
+    text-align: center;
+    
+    ion-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #495057;
+    }
+  }
+}

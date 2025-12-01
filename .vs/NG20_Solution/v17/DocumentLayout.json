@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Yogesh\\Desktop\\ng\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\dataaccess\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\dataaccess\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\controllers\\companiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\controllers\\menucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\dataaccess\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\dataaccess\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|c:\\users\\yogesh\\desktop\\ng\\api_09\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{752C3732-32B4-4C1E-B2D2-9CCBD6C7D09E}|Api_09\\Api_09.csproj|solutionrelative:api_09\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\DataAccess\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "Api_09\\DataAccess\\AuthRepository.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\DataAccess\\AuthRepository.cs",
+              "RelativeToolTip": "Api_09\\DataAccess\\AuthRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowD0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T18:36:13.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Api_09\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Api_09\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwCkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T09:55:39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Api_09\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Api_09\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAtwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T07:07:26.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Program.cs",
+              "RelativeDocumentMoniker": "Api_09\\Program.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Program.cs",
+              "RelativeToolTip": "Api_09\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:09:46.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompaniesController.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\CompaniesController.cs",
+              "RelativeDocumentMoniker": "Api_09\\Controllers\\CompaniesController.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\CompaniesController.cs",
+              "RelativeToolTip": "Api_09\\Controllers\\CompaniesController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T13:43:46.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RolesController.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\RolesController.cs",
+              "RelativeDocumentMoniker": "Api_09\\Controllers\\RolesController.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\RolesController.cs",
+              "RelativeToolTip": "Api_09\\Controllers\\RolesController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-11T17:17:52.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\appsettings.json",
+              "RelativeDocumentMoniker": "Api_09\\appsettings.json",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\appsettings.json",
+              "RelativeToolTip": "Api_09\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-28T15:17:50.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\DataAccess\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Api_09\\DataAccess\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\DataAccess\\UserRepository.cs",
+              "RelativeToolTip": "Api_09\\DataAccess\\UserRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowCsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:44:51.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuController.cs",
+              "DocumentMoniker": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\MenuController.cs",
+              "RelativeDocumentMoniker": "Api_09\\Controllers\\MenuController.cs",
+              "ToolTip": "C:\\Users\\Yogesh\\Desktop\\ng\\Api_09\\Controllers\\MenuController.cs",
+              "RelativeToolTip": "Api_09\\Controllers\\MenuController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T18:49:19.556Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

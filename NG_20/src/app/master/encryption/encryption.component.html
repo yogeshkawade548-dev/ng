@@ -1,0 +1,60 @@
+<div class="encryption-management">
+  <div class="header">
+    <h2>Encryption & Decryption</h2>
+    <button class="clear-btn" (click)="clear()">Clear All</button>
+  </div>
+
+  <div class="encryption-container">
+    <!-- Input Section -->
+    <div class="section">
+      <h3>Input Data</h3>
+      <textarea 
+        [(ngModel)]="inputData" 
+        placeholder="Enter text to encrypt..."
+        rows="4"
+        class="input-textarea">
+      </textarea>
+      <div class="button-group">
+        <button class="encrypt-btn" (click)="encrypt()" [disabled]="loading">
+          {{ loading ? 'Encrypting...' : 'Encrypt' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Encrypted Data Section -->
+    <div class="section">
+      <h3>Encrypted Data</h3>
+      <textarea 
+        [(ngModel)]="encryptedData" 
+        placeholder="Encrypted data will appear here..."
+        rows="4"
+        class="output-textarea">
+      </textarea>
+      <div class="button-group">
+        <button class="copy-btn" (click)="copyToClipboard(encryptedData)" [disabled]="!encryptedData">
+          Copy
+        </button>
+        <button class="decrypt-btn" (click)="decrypt()" [disabled]="loading">
+          {{ loading ? 'Decrypting...' : 'Decrypt' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Decrypted Data Section -->
+    <div class="section">
+      <h3>Decrypted Data</h3>
+      <textarea 
+        [(ngModel)]="decryptedData" 
+        placeholder="Decrypted data will appear here..."
+        rows="4"
+        class="output-textarea"
+        readonly>
+      </textarea>
+      <div class="button-group">
+        <button class="copy-btn" (click)="copyToClipboard(decryptedData)" [disabled]="!decryptedData">
+          Copy
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

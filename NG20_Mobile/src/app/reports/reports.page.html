@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Reports</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/dashboard"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <!-- Header Badges -->
+  <ion-toolbar color="light">
+    <ion-segment value="assets">
+      <ion-segment-button value="assets">
+        <ion-label>Assets</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="liabilities">
+        <ion-label>Liabilities</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="investment">
+        <ion-label>Investment</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="expenses">
+        <ion-label>Expenses</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="reports-container">
+    <!-- Content will be shown based on selected segment -->
+  </div>
+</ion-content>

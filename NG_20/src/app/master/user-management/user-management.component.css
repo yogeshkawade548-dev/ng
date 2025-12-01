@@ -1,0 +1,418 @@
+.user-management {
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.filters-section {
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.filter-label {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.filter-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  flex: 1;
+}
+
+.field-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.filter-field {
+  width: 100%;
+}
+
+.clear-btn {
+  height: 28px;
+  margin-top: 19px;
+  align-self: flex-end;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.search-input {
+  width: 200px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.actions {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/* Material Form Field Height Fix */
+::ng-deep .filter-field .mat-mdc-form-field {
+  height: 28px !important;
+  margin-bottom: 0 !important;
+}
+
+::ng-deep .filter-field .mat-mdc-text-field-wrapper {
+  height: 28px !important;
+}
+
+::ng-deep .filter-field .mat-mdc-form-field-infix {
+  min-height: 28px !important;
+  padding: 0 !important;
+}
+
+::ng-deep .filter-field input {
+  height: 28px !important;
+  line-height: 28px !important;
+}
+
+::ng-deep .mat-mdc-form-field {
+  height: 32px !important;
+  margin-bottom: 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-text-field-wrapper {
+  height: 32px !important;
+}
+
+::ng-deep .mat-mdc-form-field .mdc-text-field {
+  height: 32px !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-form-field-infix {
+  min-height: 32px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .mat-mdc-form-field input {
+  line-height: 32px !important;
+  padding: 0 12px !important;
+  height: 32px !important;
+  box-sizing: border-box !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-floating-label {
+  top: 16px !important;
+  line-height: 1 !important;
+}
+
+::ng-deep .mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label--float-above {
+  transform: translateY(-50%) scale(0.75) !important;
+}
+
+/* Material Button Fixes */
+::ng-deep .mat-mdc-raised-button {
+  height: 32px !important;
+  line-height: normal !important;
+  padding: 0 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+::ng-deep .mat-mdc-icon-button {
+  width: 40px !important;
+  height: 40px !important;
+  padding: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+::ng-deep .mat-mdc-button-base {
+  min-width: auto !important;
+}
+
+::ng-deep .mat-icon {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  line-height: 20px !important;
+}
+
+/* Material Table Row Height and Colors */
+::ng-deep .mat-mdc-table .mat-mdc-cell {
+  padding: 0 16px !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  font-size: 14px !important;
+}
+
+::ng-deep .mat-mdc-table .mat-mdc-header-cell {
+  padding: 0 16px !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  background-color: #3498db !important;
+  color: white !important;
+  font-size: 14px !important;
+}
+
+/* Form Field Colors */
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper .mdc-notched-outline .mdc-notched-outline__leading,
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper .mdc-notched-outline .mdc-notched-outline__notch,
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-color: #3498db !important;
+}
+
+::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #3498db !important;
+}
+
+.btn-primary {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-content form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f8f9fa;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.btn-edit {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  padding: 1rem;
+}
+
+.page-info {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.page-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-btn {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #e9ecef;
+}
+
+.page-btn.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.page-btn:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-message small {
+  display: block;
+}
+
+.form-input.valid {
+  border-color: #28a745;
+  background-color: #f8fff9;
+}
+
+.form-input.invalid {
+  border-color: #e74c3c;
+  background-color: #fff8f8;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}

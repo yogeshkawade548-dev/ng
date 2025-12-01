@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>NG20 Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="logo-section">
+      <ion-icon name="business" size="large" color="primary"></ion-icon>
+      <h1>NG20 Mobile</h1>
+      <p>Inventory Management System</p>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input 
+            type="text" 
+            [(ngModel)]="username" 
+            placeholder="Enter username">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input 
+            type="password" 
+            [(ngModel)]="password" 
+            placeholder="Enter password">
+          </ion-input>
+        </ion-item>
+
+        <ion-button 
+          expand="block" 
+          (click)="login()" 
+          class="login-btn">
+          Login
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

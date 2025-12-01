@@ -1,0 +1,83 @@
+<div class="company-management">
+  <div class="header">
+    <h2>Company Management</h2>
+    <button mat-raised-button color="primary" (click)="openDialog()">Add Company</button>
+  </div>
+  
+  <div class="filters-section">
+    <div class="filter-row">
+      <div class="filter-group">
+        <label class="field-label">Company Name</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="nameFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">Address</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="addressFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">Phone</label>
+        <mat-form-field appearance="outline" class="filter-field">
+          <input matInput [(ngModel)]="phoneFilter">
+        </mat-form-field>
+      </div>
+      
+      <div class="filter-group">
+        <label class="field-label">&nbsp;</label>
+        <button mat-raised-button color="accent" (click)="clearFilters()" class="clear-btn">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="company-table">
+    <table mat-table [dataSource]="paginatedCompanies" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Company Name</th>
+        <td mat-cell *matCellDef="let company">{{company.name}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef>Address</th>
+        <td mat-cell *matCellDef="let company">{{company.address}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef>Phone</th>
+        <td mat-cell *matCellDef="let company">{{company.phone}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let company">
+          <button mat-icon-button color="primary" (click)="editCompany(company)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteCompany(company.id!)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <div class="pagination">
+      <div class="page-info">
+        Page {{ currentPage }} of {{ totalPages }} ({{ filteredCompanies.length }} total companies)
+      </div>
+      <div class="page-controls">
+        <button class="page-btn" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+        @for (page of [].constructor(totalPages); track $index) {
+          <button class="page-btn" [class.active]="currentPage === $index + 1" (click)="goToPage($index + 1)">{{ $index + 1 }}</button>
+        }
+        <button class="page-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+      </div>
+    </div>
+  </div>
+</div>

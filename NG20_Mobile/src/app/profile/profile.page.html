@@ -1,0 +1,96 @@
+<ion-content>
+  <div class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <ion-avatar>
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Profile">
+        </ion-avatar>
+      </div>
+      <div class="profile-info">
+        <h1>{{getUserName()}}</h1>
+        <p class="email">{{getUserEmail()}}</p>
+        <p class="role">{{getUserRole()}}</p>
+      </div>
+    </div>
+
+
+
+    <!-- Menu Options -->
+    <ion-list class="menu-list">
+      <ion-list-header>
+        <ion-label>Account</ion-label>
+      </ion-list-header>
+      
+      <ion-item button lines="full" (click)="editProfile()">
+        <ion-icon name="person-circle" slot="start" color="primary"></ion-icon>
+        <ion-label>
+          <h2>Edit Profile</h2>
+          <p>Update your personal information</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+      
+      <ion-item button lines="full" (click)="changePassword()">
+        <ion-icon name="key" slot="start" color="medium"></ion-icon>
+        <ion-label>
+          <h2>Change Password</h2>
+          <p>Update your security credentials</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label>Preferences</ion-label>
+      </ion-list-header>
+      
+      <ion-item button lines="full" (click)="openSettings()">
+        <ion-icon name="settings" slot="start" color="tertiary"></ion-icon>
+        <ion-label>
+          <h2>Settings</h2>
+          <p>App preferences and configuration</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+      
+      <ion-item button lines="full" (click)="openNotifications()">
+        <ion-icon name="notifications" slot="start" color="warning"></ion-icon>
+        <ion-label>
+          <h2>Notifications</h2>
+          <p>Manage your notification preferences</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-list-header>
+        <ion-label>Support</ion-label>
+      </ion-list-header>
+      
+      <ion-item button lines="full" (click)="openHelp()">
+        <ion-icon name="help-circle" slot="start" color="success"></ion-icon>
+        <ion-label>
+          <h2>Help & Support</h2>
+          <p>Get help and contact support</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+      
+      <ion-item button lines="full" (click)="openAbout()">
+        <ion-icon name="information-circle" slot="start" color="medium"></ion-icon>
+        <ion-label>
+          <h2>About</h2>
+          <p>App version and information</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+      
+      <ion-item button (click)="logout()" color="danger" lines="none" class="logout-item">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label>
+          <h2>Logout</h2>
+          <p>Sign out of your account</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

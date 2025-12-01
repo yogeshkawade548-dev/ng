@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="navigateToProfile()">
+        <ion-icon name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="dashboard-container">
+    <!-- Welcome Card -->
+    <ion-card class="welcome-card">
+      <ion-card-content>
+        <div class="welcome-content">
+          <div class="welcome-text">
+            <h1>Welcome Back!</h1>
+            <p>{{getCurrentDate()}}</p>
+          </div>
+          <ion-icon name="analytics" class="welcome-icon"></ion-icon>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-container">
+      <ion-spinner></ion-spinner>
+      <p>Loading dashboard data...</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div *ngIf="!loading" class="stats-section">
+      <h2>Overview</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card class="stat-card items-card">
+              <ion-card-content>
+                <div class="stat-header">
+                  <ion-icon name="trending-up"></ion-icon>
+                  <span class="stat-trend">+12%</span>
+                </div>
+                <h2>{{totalItems}}</h2>
+                <p>Investment</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="stat-card companies-card">
+              <ion-card-content>
+                <div class="stat-header">
+                  <ion-icon name="trending-down"></ion-icon>
+                  <span class="stat-trend">+5%</span>
+                </div>
+                <h2>{{totalCompanies}}</h2>
+                <p>Liability</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card class="stat-card users-card">
+              <ion-card-content>
+                <div class="stat-header">
+                  <ion-icon name="cash"></ion-icon>
+                  <span class="stat-trend">+8%</span>
+                </div>
+                <h2>{{totalUsers}}</h2>
+                <p>Income</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="stat-card categories-card">
+              <ion-card-content>
+                <div class="stat-header">
+                  <ion-icon name="card"></ion-icon>
+                  <span class="stat-trend">+2%</span>
+                </div>
+                <h2>{{totalCategories}}</h2>
+                <p>Expense</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Quick Actions -->
+    <div *ngIf="!loading" class="actions-section">
+      <h2>Quick Actions</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-card class="action-card" button (click)="navigateToItems()">
+              <ion-card-content>
+                <ion-icon name="add-circle" color="primary"></ion-icon>
+                <p>Add Item</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-card class="action-card" button (click)="navigateToReports()">
+              <ion-card-content>
+                <ion-icon name="document-text" color="success"></ion-icon>
+                <p>Reports</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
